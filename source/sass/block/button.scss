@@ -1,0 +1,39 @@
+.button {
+  width: 100%;
+  outline: 2px #ffffff  solid;
+  border: none;
+  outline-offset: -2px;
+  text-transform: uppercase;
+  background-color: transparent;
+  font-weight: 700;
+  font-family: $roboto;
+  font-size: 12px;
+  line-height: 12px;
+  cursor: pointer;
+}
+
+.button:hover {
+  background-color: #ffffff;
+  color: #103aae;
+}
+
+.button:focus {
+  outline: 2px #000000 solid;
+  background-color: rgba(255, 255, 255, 0.8);
+  color: #103aae;
+}
+
+.button:active {
+  background-color: #ffffff;
+  color: #102654;
+}
+
+.button:hover,
+.button:focus,
+.button:active {
+  transition: ease 0.3s;
+}
+
+.button:disabled {
+  opacity: 0.5;
+}

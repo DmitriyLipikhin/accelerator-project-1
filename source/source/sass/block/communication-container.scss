@@ -1,0 +1,10 @@
+.communication-container {
+  display: flex;
+  flex-direction: column;
+}
+
+@media (min-width: $desktop-width) {
+  .communication-container {
+    flex-direction: row;
+  }
+}

@@ -1,0 +1,175 @@
+.price-card {
+  list-style-type: none;
+  min-width: 206px;
+  background-color: #ffffff;
+  padding: 43px 35px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 18px;
+  z-index: 1;
+  border: 7px solid #ffffff;
+  text-align: center;
+}
+
+.price-card:focus-within,
+.price-card:hover {
+  border: 7px solid;
+  border-image: linear-gradient(137deg, #ed0233 0%, #003eb7 75%);
+  border-image-slice: 7;
+}
+
+.price-card__title {
+  font-size: 22px;
+  line-height: 22px;
+  font-family: $roboto;
+  font-weight: 600;
+  margin: 0;
+}
+
+.price-card__term {
+  font-size: 14px;
+  line-height: 22px;
+  font-family: $roboto;
+}
+
+.price-card__cost {
+  min-height: 120px;
+  display: grid;
+  align-items: flex-end;
+  font-size: 48px;
+  line-height: 72px;
+  font-weight: 700;
+  font-family: $roboto;
+  color: #103aae;
+  position: relative;
+  grid-template-columns: min-content;
+}
+
+.price-card__cost::before {
+  content: attr(data-price);
+  display: block;
+  position: absolute;
+  font-size: 80px;
+  line-height: 120px;
+  font-family: $roboto;
+  font-weight: 700;
+  color: #e8e8e8;
+  z-index: -1;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
+  opacity: 0.5;
+}
+
+.price-card__cost::after {
+  background-image: url("/__spritemap#sprite-ruble-icon-view");
+  background-position: center;
+  background-repeat: no-repeat;
+  content: "";
+  display: block;
+  background-size: 24px 33px;
+  width: 24px;
+  height: 33px;
+  margin-bottom: 20px;
+  margin-left: 10px;
+  grid-column: 2/3;
+}
+
+.price-card__button {
+  outline: 2px #102654 solid;
+  border: none;
+  padding: 27px 49px;
+  background-color: #ffffff;
+  font-size: 12px;
+  line-height: 12px;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-family: $roboto;
+  outline-offset: -2px;
+  width: 100%;
+  text-decoration: none;
+  color: #102654;
+  text-align: center;
+  margin-top: auto;
+}
+
+.price-card__button:hover,
+.price-card__button:focus,
+.price-card__button:active,
+.price-card:hover .price-card__button {
+  color: #ffffff;
+}
+
+.price-card__button:hover,
+.price-card__button:active,
+.price-card:hover .price-card__button {
+  background: linear-gradient(112deg, #ed0233 4%, #003eb7 100%);
+  outline: unset;
+}
+
+.price-card__button:focus {
+  background: linear-gradient(112deg, rgba(236.7, 2.07, 51.33) 4%, rgba(0, 61.63, 183.14) 100%);
+  border: none;
+  outline: none;
+}
+
+.price-card__button:active {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.price-card__button[aria-disabled="true"] {
+  opacity: 0.3;
+  pointer-events: none;
+}
+
+@media (min-width: $tablet-width) {
+  .price-card {
+    padding: 58px;
+    row-gap: 22px;
+    min-width: 380px;
+  }
+
+  .price-card__title {
+    font-size: 24px;
+    line-height: 24px;
+  }
+
+  .price-card__term {
+    font-size: 16px;
+    line-height: 24px;
+  }
+
+  .price-card__cost {
+    font-size: 60px;
+    line-height: 90px;
+    min-height: 150px;
+  }
+
+  .price-card__cost::before {
+    font-size: 100px;
+    line-height: 150px;
+  }
+
+  .price-card__cost::after {
+    background-size: 30px 42px;
+    width: 30px;
+    height: 42px;
+    margin-bottom: 24px;
+    margin-left: 14px;
+  }
+}
+
+@media (min-width: $desktop-width) {
+  .price-card {
+    padding: 58px;
+    width: 360px;
+    min-width: 360px;
+    row-gap: 17px;
+  }
+
+  .price-card__title {
+    font-size: 26px;
+    line-height: 26px;
+  }
+}
